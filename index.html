@@ -27,7 +27,6 @@
             margin: 20px 0;
         }
 
-        /* Position the menu button in the top-left corner */
         .menu-btn {
             position: absolute;
             top: 20px;
@@ -45,11 +44,10 @@
             background-color: #1a5276;
         }
 
-        /* Dropdown menu hidden by default */
         .menu-content {
             display: none;
             position: absolute;
-            top: 60px; /* Just below the button */
+            top: 60px;
             left: 20px;
             background-color: white;
             min-width: 160px;
@@ -75,51 +73,40 @@
         }
 
         .menu-content a:last-child {
-            border-bottom: none; /* No border on the last item */
+            border-bottom: none;
         }
 
-        /* Section Divider */
         hr {
             border: 1px solid #ccc;
             margin: 40px 0;
         }
 
-        /* Styling each app section */
+        .columns-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 40px;
+        }
+
         .section {
+            flex: 1;
+            margin: 0 20px;
             padding: 20px;
             background-color: #fff;
-            margin-bottom: 40px;
             border: 1px solid #ddd;
             border-radius: 10px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            text-align: left;
         }
 
         .section h2 {
             color: #2e86c1;
         }
 
-        .columns-container {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 40px;
-}
-
-.section {
-    flex: 1;
-    margin: 0 20px;
-    padding: 20px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 500px; /* Adjust as necessary */
-    text-align: left;
-}
-
-
+        /* Google Sign-In Button */
+        .g-signin2 {
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -131,51 +118,33 @@
         <li><a href="#">Authority Login</a></li>
     </ul>
 
-    
-
     <div class="container">
         <h1>Welcome to the Medi Dost App</h1>
         <p>This app helps with managing patient health, drug logistics, and doctor management in a medical facility. Below are some useful links for more information.</p>
+
+        <!-- Google Sign-In Button -->
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
     </div>
 
-    
-
-    <!-- Section Divider -->
     <hr>
-
-    <!-- App Sections -->
-    <!-- <div class="section">
-        <h2>The App for Doctors</h2>
-        <p>This section describes the features designed for doctors, such as managing patient health records, accessing health history, scheduling appointments, and more.</p>
-    </div>
-
-    <div class="section">
-        <h2>The App for Patients</h2>
-        <p>This section highlights the functionalities for patients, including booking appointments, viewing prescriptions, tracking their medical history, and health monitoring.</p>
-    </div> -->
-
-    <!-- <div class="section">
-        <h2>The App for Government</h2>
-        <p>This section focuses on the features for government institutions, such as data analysis on public health, managing healthcare resources, and overseeing regulations.</p>
-    </div> -->
 
     <div class="columns-container">
         <div class="section">
             <h2>The App for Doctors</h2>
             <p>This section describes the features designed for doctors, such as managing patient health records, accessing health history, scheduling appointments, and more.</p>
         </div>
-    
         <div class="section">
             <h2>The App for Patients</h2>
             <p>This section highlights the functionalities for patients, including booking appointments, viewing prescriptions, tracking their medical history, and health monitoring.</p>
         </div>
-    
         <div class="section">
             <h2>The App for Government</h2>
             <p>This section focuses on the features for government institutions, such as data analysis on public health, managing healthcare resources, and overseeing regulations.</p>
         </div>
     </div>
-    
+
+    <!-- Google Sign-In Script -->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
 
     <script>
         // JavaScript to toggle menu visibility
@@ -186,6 +155,19 @@
             } else {
                 menu.style.display = "block";
             }
+        }
+
+        // Google Sign-In Callback
+        function onSignIn(googleUser) {
+            var profile = googleUser.getBasicProfile();
+            console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+            console.log('Name: ' + profile.getName());
+            console.log('Image URL: ' + profile.getImageUrl());
+            console.log('Email: ' + profile.getEmail());
+
+            // Example: Send token to your backend
+            var id_token = googleUser.getAuthResponse().id_token;
+            // Use id_token to authenticate with your backend server
         }
     </script>
 
