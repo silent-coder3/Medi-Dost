@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical App Introduction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            text-align: center;
+            padding: 50px;
+        }
+
+        h1 {
+            color: #2e86c1;
+        }
+
+        p {
+            font-size: 18px;
+            color: #333;
+            margin: 20px 0;
+        }
+
+        /* Position the menu button in the top-left corner */
+        .menu-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #2e86c1;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .menu-btn:hover {
+            background-color: #1a5276;
+        }
+
+        /* Dropdown menu hidden by default */
+        .menu-content {
+            display: none;
+            position: absolute;
+            top: 60px; /* Just below the button */
+            left: 20px;
+            background-color: white;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            border-radius: 5px;
+        }
+
+        .menu-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .menu-content a:hover {
+            background-color: #ddd;
+        }
+
+        .menu-content a:last-child {
+            border-bottom: none; /* No border on the last item */
+        }
+
+        /* Section Divider */
+        hr {
+            border: 1px solid #ccc;
+            margin: 40px 0;
+        }
+
+        /* Styling each app section */
+        .section {
+            padding: 20px;
+            background-color: #fff;
+            margin-bottom: 40px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .section h2 {
+            color: #2e86c1;
+        }
+
+        .columns-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+}
+
+.section {
+    flex: 1;
+    margin: 0 20px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 500px; /* Adjust as necessary */
+    text-align: left;
+}
+
+
+    </style>
+</head>
+<body>
+
+    <button class="menu-btn" onclick="toggleMenu()">Menu</button>
+    <ul class="menu-content" id="menuLinks">
+        <li><a href="#">Doctor Login</a></li>
+        <li><a href="#">Patient Login</a></li>
+        <li><a href="#">Authority Login</a></li>
+    </ul>
+
+    
+
+    <div class="container">
+        <h1>Welcome to the Medi Dost App</h1>
+        <p>This app helps with managing patient health, drug logistics, and doctor management in a medical facility. Below are some useful links for more information.</p>
+    </div>
+
+    
+
+    <!-- Section Divider -->
+    <hr>
+
+    <!-- App Sections -->
+    <!-- <div class="section">
+        <h2>The App for Doctors</h2>
+        <p>This section describes the features designed for doctors, such as managing patient health records, accessing health history, scheduling appointments, and more.</p>
+    </div>
+
+    <div class="section">
+        <h2>The App for Patients</h2>
+        <p>This section highlights the functionalities for patients, including booking appointments, viewing prescriptions, tracking their medical history, and health monitoring.</p>
+    </div> -->
+
+    <!-- <div class="section">
+        <h2>The App for Government</h2>
+        <p>This section focuses on the features for government institutions, such as data analysis on public health, managing healthcare resources, and overseeing regulations.</p>
+    </div> -->
+
+    <div class="columns-container">
+        <div class="section">
+            <h2>The App for Doctors</h2>
+            <p>This section describes the features designed for doctors, such as managing patient health records, accessing health history, scheduling appointments, and more.</p>
+        </div>
+    
+        <div class="section">
+            <h2>The App for Patients</h2>
+            <p>This section highlights the functionalities for patients, including booking appointments, viewing prescriptions, tracking their medical history, and health monitoring.</p>
+        </div>
+    
+        <div class="section">
+            <h2>The App for Government</h2>
+            <p>This section focuses on the features for government institutions, such as data analysis on public health, managing healthcare resources, and overseeing regulations.</p>
+        </div>
+    </div>
+    
+
+    <script>
+        // JavaScript to toggle menu visibility
+        function toggleMenu() {
+            var menu = document.getElementById("menuLinks");
+            if (menu.style.display === "block") {
+                menu.style.display = "none";
+            } else {
+                menu.style.display = "block";
+            }
+        }
+    </script>
+
+</body>
+</html>
